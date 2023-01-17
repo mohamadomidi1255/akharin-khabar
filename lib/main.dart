@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:qakhrinkhbar/veiw/login_screen.dart';
 import 'package:qakhrinkhbar/veiw/splash_screen.dart';
 
 void main() {
@@ -17,6 +18,8 @@ class MyApp extends StatelessWidget {
       GlobalCupertinoLocalizations.delegate,
     ], supportedLocales: [
       Locale('fa', ''), // farsi, no country code
-    ], debugShowCheckedModeBanner: false, home: SplashScreen());
+    ], debugShowCheckedModeBanner: false, home: SplashScreen()
+        // home: LoginScreen(),
+        );
   }
 }

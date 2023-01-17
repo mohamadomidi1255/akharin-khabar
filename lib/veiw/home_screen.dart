@@ -3,7 +3,7 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:qakhrinkhbar/component/colors.dart';
 import 'package:qakhrinkhbar/veiw/Setting_screen.dart';
 import 'package:qakhrinkhbar/veiw/login_screen.dart';
-import 'package:share_plus/share_plus.dart';
+// import 'package:share_plus/share_plus.dart';
 import 'package:sticky_headers/sticky_headers.dart';
 import 'package:flutter_styled_toast/flutter_styled_toast.dart';
 import 'package:rating_dialog/rating_dialog.dart';
@@ -140,8 +140,8 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
             ListTile(
               onTap: () async {
-                await Share.share(
-                    "برای با خبر شدن ار اخرین خبر ها برنامه اخرین خبر را دانلود کنید");
+                // await Share.share(
+                //     "برای با خبر شدن ار اخرین خبر ها برنامه اخرین خبر را دانلود کنید");
               },
               title: Row(
                 children: const [

@@ -12,6 +12,9 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
+  bool passwordVisible = false;
+  var textEditingController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -42,6 +45,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 ])),
         body: SingleChildScrollView(
           child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
+            //poster
             Padding(
               padding: const EdgeInsets.fromLTRB(0, 50, 0, 60),
               child: SizedBox(
@@ -50,8 +54,9 @@ class _LoginScreenState extends State<LoginScreen> {
                     "assets/images/icon3.png",
                   )),
             ),
+
             Column(children: [
-              const Align(
+              Align(
                 alignment: Alignment.center,
                 child: Padding(
                   padding: EdgeInsets.all(4.0),
@@ -78,17 +83,25 @@ class _LoginScreenState extends State<LoginScreen> {
                   ),
                 ),
               ),
-              const Align(
+              Align(
                 alignment: Alignment.center,
                 child: Padding(
                   padding: EdgeInsets.all(4.0),
                   child: SizedBox(
                     width: 350,
                     child: TextField(
-                      obscureText: true,
+                      obscureText: passwordVisible,
                       style: TextStyle(fontSize: 16),
                       decoration: InputDecoration(
-                        suffixIcon: Icon(Icons.lock_outline_rounded, size: 25),
+                        suffixIcon: IconButton(
+                            onPressed: () {
+                              setState(() {
+                                passwordVisible = !passwordVisible;
+                              });
+                            },
+                            icon: passwordVisible
+                                ? Icon(Icons.visibility)
+                                : Icon(Icons.visibility_off)),
                         focusedBorder: OutlineInputBorder(
                             borderRadius: BorderRadius.all(Radius.circular(20)),
                             borderSide:
@@ -150,8 +163,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   ),
                 ),
               ),
-              Align(
-                alignment: Alignment.center,
+              Center(
                 child: TextButton(
                     onPressed: () {},
                     child: const Text("رمز عبور خود را فراموش کرده اید؟",
